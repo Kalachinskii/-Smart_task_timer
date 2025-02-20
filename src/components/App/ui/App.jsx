@@ -1,7 +1,7 @@
 import styles from '../app.module.css'
 import { FormItem } from '../../FormItem/formItem';
-import { ActiveCardList } from '../../ActiveCardList/activeCardList';
 import { useState } from 'react';
+import { SliderCard } from '../../ActiveCardList/sliderCard';
 
 
 export function App() {
@@ -20,7 +20,7 @@ export function App() {
   return (
     <div className={styles['app']}>
       <FormItem addItem={addItem} items={items}/>
-      <ActiveCardList />
+      <SliderCard />
     </div>
   )
 }

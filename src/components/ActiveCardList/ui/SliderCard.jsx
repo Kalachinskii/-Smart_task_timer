@@ -36,7 +36,7 @@ export function SliderCard() {
                     <p className={styles["btn-execute"]}>Выполнить</p>
                 </div>
             </SwiperSlide>
-            <SwiperSlide className='swiper-slide'>
+                        <SwiperSlide className='swiper-slide'>
                 <div className={styles['card']}>
                     <div className={styles["card-content"]}>
                         <h3>
