@@ -1,11 +1,13 @@
 :root {
-  --main-bg-color: #202124;
-  --form-bg-color: #4D5160;
-  --text-color: #fff;
+  --main-bg-color: #0D1F23;
+  --form-bg-color: #132E35;
+  --form-active-bg-color: #2D4A53;
+  --text-color: #69818D;
+  --text-active-color: #AFB3B7;
+  --border-color: #5A636A;
 }
 
-body,
-* {
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;

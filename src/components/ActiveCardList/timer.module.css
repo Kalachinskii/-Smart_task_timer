@@ -1,0 +1,29 @@
+:root {
+    --main-bg-color: #0D1F23;
+    --form-bg-color: #132E35;
+    --form-active-bg-color: #2D4A53;
+    --text-color: #69818D;
+    --text-active-color: #AFB3B7;
+    --border-color: #5A636A;
+}
+
+.time-btn {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.time-btn p {
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.time-btn i {
+    text-align: center;
+    cursor: pointer;
+}
+.time-btn i:hover {
+    color: var(--text-active-color);
+    text-shadow: 0 0 3px var(--text-active-color);
+}
