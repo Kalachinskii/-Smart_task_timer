@@ -1,0 +1,32 @@
+:root {
+    --main-bg-color: #0D1F23;
+    --form-bg-color: #132E35;
+    --form-active-bg-color: #2D4A53;
+    --text-color: #69818D;
+    --text-active-color: #AFB3B7;
+    --border-color: #5A636A;
+}
+
+.swiper {
+    width: 100%;
+    padding: 40px 0 80px 0;
+}
+
+.swiper-slide {
+    position: relative;
+    width: auto;
+    height: auto;
+    box-shadow: 1px 22px 44px rgba(0, 0,0,0.2);
+    overflow: hidden;
+    transition: 1s;
+    user-select: none;
+    border-radius: 15px;
+}
+
+.swiper-pagination-bullet-active {
+    width: 32px;
+    border-radius: 14px;
+    background: linear-gradient(120deg, #085c55b4, #18dfdfa1);
+    box-shadow: 0 0 20px 0 rgba(8, 133, 158, 0.658);
+    transition: all 0.8s ease-in-out;
+}
