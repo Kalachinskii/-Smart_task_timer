@@ -2,6 +2,7 @@
   "name": "time2",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://Kalachinskii.github.io/-Smart_task_timer",
   "type": "module",
   "scripts": {
     "dev": "vite",
