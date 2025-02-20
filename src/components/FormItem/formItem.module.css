@@ -1,0 +1,90 @@
+:root {
+    --main-bg-color: #202124;
+    --form-bg-color: #4D5160;
+    --text-color: #fff;
+    --active-color: #fff;
+    --no-active-color: #000;
+}
+
+.formInput {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-content: space-around;
+}
+
+.formItem {
+    /* display: flex; */
+    align-self: center;
+    /* height: 100%; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.formItem input {
+    width: 100%;
+    height: 100%;
+    padding: 8px 0;
+    margin: 5px 0;
+    border: none;
+    background: var(--form-bg-color);
+    padding-left: 25px;
+}
+
+
+.formItem input:last-child {
+    border-radius: 25px 45px 0 25px;
+}
+
+.formItem input:first-child {
+    border-radius: 25px 0 45px 25px;
+}
+
+.btn {
+    align-self: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    background: var(--form-bg-color);
+    backdrop-filter: invert(80%);
+    box-shadow: 0px 0px 15px var(--main-bg-color), inset 0px 0px 15px var(--form-bg-color);
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    width: 40%;
+}
+
+.btn i {
+    color: var(--no-active-color);
+    background: var(--form-bg-color);
+}
+
+.btn:hover i {
+    color: var(--active-color);
+}
+
+@media screen and (max-width: 1440px) {
+    form {
+        display: flex;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    form {
+        display: flex;
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    form {
+        display: flex;
+        width: 80%;
+    }
+}

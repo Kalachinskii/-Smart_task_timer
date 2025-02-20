@@ -1,0 +1,15 @@
+:root {
+  --main-bg-color: #202124;
+  --form-bg-color: #4D5160;
+  --text-color: #fff;
+}
+
+body,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--main-bg-color);
+  color: var(--text-color);
+}
+
