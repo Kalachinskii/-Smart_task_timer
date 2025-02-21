@@ -1,6 +1,6 @@
 import styles from '../app.module.css'
 import { FormItem } from '../../FormItem/formItem';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SliderCard } from '../../ActiveCardList/sliderCard';
 
 
@@ -17,10 +17,27 @@ export function App() {
     }]);
   };
 
+  // добовляем в хранилище данные
+  useEffect(() => {
+    if (items.length) {
+      localStorage.setItem('data',JSON.stringify(items));
+    }
+  }, [items])
+
+  // 1 запуск
+  useEffect(() => {
+      const data = JSON.parse(localStorage.getItem('data')) || [];
+      if (data) {
+        setItems(data.map(item => ({
+          ...item
+        })))
+      }
+  }, [])
+
   return (
     <div className={styles['app']}>
       <FormItem addItem={addItem} items={items}/>
-      <SliderCard />
+      <SliderCard task={items}/>
     </div>
   )
 }
