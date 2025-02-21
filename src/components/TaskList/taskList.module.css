@@ -28,3 +28,24 @@
 .tasks::-webkit-scrollbar {
     width: 0;
 }
+
+@media screen and (max-width: 1440px) {
+    .task-list {
+        display: flex;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .task-list {
+        display: flex;
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .task-list {
+        display: flex;
+        width: 80%;
+    }
+}
