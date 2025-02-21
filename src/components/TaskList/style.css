@@ -8,9 +8,8 @@
 }
 
 .swiper {
-    width: 40%;
+    width: 100%;
     padding: 40px 0 80px 0;
-    /* border: 1px solid red; */
 }
 
 .swiper-slide {
@@ -30,4 +29,14 @@
     background: linear-gradient(120deg, #085c55b4, #18dfdfa1);
     box-shadow: 0 0 20px 0 rgba(8, 133, 158, 0.658);
     transition: all 0.8s ease-in-out;
+}
+
+.fa-xmark {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+}
+.fa-xmark:hover {
+    color: red;
+    cursor: pointer;
 }

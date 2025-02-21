@@ -1,0 +1,30 @@
+:root {
+    --main-bg-color: #0D1F23;
+    --form-bg-color: #132E35;
+    --form-active-bg-color: #2D4A53;
+    --text-color: #69818D;
+    --text-active-color: #AFB3B7;
+    --border-color: #5A636A;
+}
+
+.task-list {
+    width: 40%;
+    align-self: center;
+    margin-top: 1%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    overflow-y:scroll;
+    height: 100%;
+    padding-bottom: 95px;
+}
+
+.tasks::-webkit-scrollbar {
+    width: 0;
+}

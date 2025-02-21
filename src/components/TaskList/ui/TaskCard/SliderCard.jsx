@@ -3,11 +3,11 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import {Pagination} from "swiper/modules";
-import "../style.css";
+import "../../style.css";
 import { Timer } from './Timer';
-import styles from '../activeCardList.module.css';
+import styles from '../../activeCardList.module.css';
 
-export function SliderCard({tasks, changeCompletedTask, changeTaskFailed}) {
+export function SliderCard({tasks, changeCompletedTask, changeTaskFailed, deleteTask}) {
     return (
         <Swiper
             modules={[Pagination]}
@@ -34,6 +34,7 @@ export function SliderCard({tasks, changeCompletedTask, changeTaskFailed}) {
             {tasks.map(el => !el.failed && !el.completed && (
                 <SwiperSlide className='swiper-slide' key={el.id}>
                     <div className={styles['card']}>
+                        <i className={`${"fa-solid fa-xmark"}`} onClick={() => deleteTask(el.id)}></i>
                         <div className={styles["card-content"]}>
                             <h3>
                                 {el.task}

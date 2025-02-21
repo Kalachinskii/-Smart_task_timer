@@ -64,7 +64,7 @@ form {
 }
 
 .btn:hover i {
-    color: var(--text-color);
+    color: #fff;
 }
 
 @media screen and (max-width: 1440px) {

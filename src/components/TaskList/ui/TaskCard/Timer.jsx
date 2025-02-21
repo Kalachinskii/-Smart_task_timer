@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { CountdownCircleTimer} from 'react-countdown-circle-timer'
-import styles from '../timer.module.css';
+import styles from '../../timer.module.css';
 
 export const Timer = ({timeSecond, idTask, changeTaskFailed}) => {
     const [isPlayPayse, setIsPlayPayse] = useState(true);
@@ -49,8 +49,3 @@ export const Timer = ({timeSecond, idTask, changeTaskFailed}) => {
         </CountdownCircleTimer>
     )
 }
-/*
-
-(totalElapsedTime: number) => void | { shouldRepeat: boolean, delay?: number, newInitialRemainingTime?: number }
-
-*/ 

@@ -16,3 +16,21 @@
   justify-content: center;
   align-content: center;
 }
+
+.box-failed-completed-tasks {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 40%;
+  align-self: center;
+  border: 1px solid red;
+  height: 200px;
+}
+
+.btn-failed-completed {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  border: 1px solid red;
+  /* height: 30px; */
+}

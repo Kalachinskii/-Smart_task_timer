@@ -1,0 +1,76 @@
+:root {
+    --main-bg-color: #0D1F23;
+    --form-bg-color: #132E35;
+    --form-active-bg-color: #2D4A53;
+    --text-color: #69818D;
+    --text-active-color: #AFB3B7;
+    --border-color: #5A636A;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    /* border: 1px solid red; */
+    border-top: 1px solid var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+}
+
+.task:nth-child(1) {
+    border-top: none;
+}
+
+.task:hover {
+    box-shadow: inset 0px 0px 88px var(--form-bg-color);
+}
+
+.task:not(:last-child) {
+    border-bottom: none;
+}
+
+.task-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 325px;
+    padding: 0 0 0 10px;
+}
+
+.task-btn {
+    display: flex;
+}
+
+.failed {
+    padding-right: 10px;
+}
+
+.task-btn i:last-child {
+    margin-right: 15px;
+}
+
+.task-btn i:first-child:hover {
+    color: rgba(0, 238, 255, 0.384);
+    cursor: pointer;
+}
+
+.task-btn i:last-child:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.task-list h3 {
+    word-wrap: break-word;
+    line-height: 20px;
+    width: 85%;
+    overflow: hidden;
+}
+
+h5 span {
+    padding-right: 10px;
+}
+
+h5 {
+    color: #757575;
+    font-weight: 400;
+}

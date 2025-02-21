@@ -1,7 +1,8 @@
 import styles from '../app.module.css'
 import { FormItem } from '../../FormItem/formItem';
 import { useEffect, useState } from 'react';
-import { SliderCard } from '../../ActiveCardList/sliderCard';
+import { SliderCard } from '../../TaskList/sliderCard';
+import { TaskList } from '../../TaskList/ui/TaskList';
 
 
 export function App() {
@@ -47,10 +48,14 @@ export function App() {
     })))
   }
 
+  const deleteTask = (id) => {
+    setItems(items.filter(item => item.id !== id));
+  }
+
   return (
     <div className={styles['app']}>
       <FormItem addItem={addItem} items={items}/>
-      <SliderCard tasks={items} changeCompletedTask={changeTask} changeTaskFailed={changeTask}/>
+      <TaskList tasks={items} changeCompletedTask={changeTask} changeTaskFailed={changeTask} deleteTask={deleteTask}/>
     </div>
   )
 }
