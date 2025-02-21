@@ -1,9 +1,9 @@
 :root {
-    --main-bg-color: #202124;
-    --form-bg-color: #4D5160;
-    --text-color: #fff;
-    --active-color: #fff;
-    --no-active-color: #000;
+    --main-bg-color: #0D1F23;
+    --form-bg-color: #132E35;
+    --form-active-bg-color: #2D4A53;
+    --text-color: #69818D;
+    --text-active-color: #AFB3B7;
 }
 
 .formInput {
@@ -15,23 +15,23 @@
 }
 
 .formItem {
-    /* display: flex; */
     align-self: center;
-    /* height: 100%; */
-    /* justify-content: center; */
-    /* align-items: center; */
 }
 
 .formItem input {
-    width: 100%;
+    width: 96%;
     height: 100%;
     padding: 8px 0;
     margin: 5px 0;
     border: none;
     background: var(--form-bg-color);
     padding-left: 25px;
+    color: var(--text-active-color);
 }
 
+.formItem input::placeholder {
+    color: var(--text-active-color);
+}
 
 .formItem input:last-child {
     border-radius: 25px 45px 0 25px;
@@ -60,18 +60,20 @@ form {
 }
 
 .btn i {
-    color: var(--no-active-color);
-    background: var(--form-bg-color);
+    color: var(--text-active-color);
 }
 
 .btn:hover i {
-    color: var(--active-color);
+    color: #fff;
 }
 
 @media screen and (max-width: 1440px) {
     form {
         display: flex;
         width: 50%;
+    }
+    .formItem input {
+        width: 96%;
     }
 }
 
@@ -80,6 +82,9 @@ form {
         display: flex;
         width: 70%;
     }
+    .formItem input {
+        width: 96%;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -87,4 +92,17 @@ form {
         display: flex;
         width: 80%;
     }
+    .formItem input {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .formItem input {
+        width: 90%;
+    }
+}
+
+.error {
+    background: rgba(59, 31, 31, 0.5) !important;
 }
