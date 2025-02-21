@@ -6,7 +6,7 @@ import { SliderCard } from '../../ActiveCardList/sliderCard';
 
 export function App() {
   const [items, setItems] = useState([]);
-
+  
   const addItem = item => {
     setItems(oldItems => [...oldItems, {
       task: item.task,
@@ -26,7 +26,7 @@ export function App() {
 
   // 1 запуск
   useEffect(() => {
-      const data = JSON.parse(localStorage.getItem('data')) || [];
+      const data = JSON.parse(localStorage.getItem('data'));
       if (data) {
         setItems(data.map(item => ({
           ...item
@@ -34,10 +34,25 @@ export function App() {
       }
   }, [])
 
+  const changeTask = (obj) => {
+    // получить все данные из хранилища
+    const data = JSON.parse(localStorage.getItem('data'));
+    // задача которую будем изменять
+    const task = items.find(task => task.id === obj.id);
+    // изменяем состояние у задачи
+    task[obj.state] = true;
+    // изменяем хранилище
+    localStorage.setItem('data', JSON.stringify(items));
+    // перерисовывем
+    setItems(items.map(item => ({
+      ...item
+    })))
+  }
+
   return (
     <div className={styles['app']}>
       <FormItem addItem={addItem} items={items}/>
-      <SliderCard task={items}/>
+      <SliderCard tasks={items} changeCompletedTask={changeTask} changeTaskFailed={changeTask}/>
     </div>
   )
 }
