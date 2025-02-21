@@ -31,7 +31,7 @@ export function SliderCard({tasks, changeCompletedTask, changeTaskFailed}) {
             }}
         >
             
-            {tasks.map(el => !el.failed && (
+            {tasks.map(el => !el.failed && !el.completed && (
                 <SwiperSlide className='swiper-slide' key={el.id}>
                     <div className={styles['card']}>
                         <div className={styles["card-content"]}>

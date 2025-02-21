@@ -41,9 +41,7 @@ export function App() {
     const task = items.find(task => task.id === obj.id);
     // изменяем состояние у задачи
     task[obj.state] = true;
-    // изменяем хранилище
-    localStorage.setItem('data', JSON.stringify(items));
-    // перерисовывем
+    // перерисовывем и изменяем хранилище
     setItems(items.map(item => ({
       ...item
     })))
