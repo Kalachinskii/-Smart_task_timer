@@ -5,7 +5,7 @@ import Task from './Task';
 // import { SliderCard } from '../sliderCard';
 import { SliderCard } from './TaskCard/SliderCard';
 
-export function TaskList({tasks, changeCompletedTask, changeTaskFailed, deleteTask}) {
+export function TaskList({tasks, changeCompletedTask, changeTaskFailed, deleteTask, resumeTask}) {
     const [btnState, setBtnState] = useState(0);
 
     return (
@@ -16,11 +16,11 @@ export function TaskList({tasks, changeCompletedTask, changeTaskFailed, deleteTa
                 {btnState === 0 && <SliderCard tasks={tasks} changeCompletedTask={changeCompletedTask} changeTaskFailed={changeTaskFailed} deleteTask={deleteTask}/>}
 
                 {btnState === 1 && tasks.map(el => el.completed && (
-                    <Task key={el.id}  el={el} deleteTask={deleteTask}/>
+                    <Task key={el.id}  el={el} deleteTask={deleteTask} resumeTask={resumeTask} state={"completed"}/>
                 ))}
     
                 {btnState === 2 && tasks.map(el => el.failed && (
-                    <Task key={el.id} el={el} deleteTask={deleteTask}/>
+                    <Task key={el.id} el={el} deleteTask={deleteTask} resumeTask={resumeTask} state={"failed"}/>
                 ))} 
             </div>
         </div>

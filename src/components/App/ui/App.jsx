@@ -41,7 +41,8 @@ export function App() {
     // задача которую будем изменять
     const task = items.find(task => task.id === obj.id);
     // изменяем состояние у задачи
-    task[obj.state] = true;
+    // console.log(task[obj.state]);
+    task[obj.state] = !task[obj.state];
     // перерисовывем и изменяем хранилище
     setItems(items.map(item => ({
       ...item
@@ -55,7 +56,7 @@ export function App() {
   return (
     <div className={styles['app']}>
       <FormItem addItem={addItem} items={items}/>
-      <TaskList tasks={items} changeCompletedTask={changeTask} changeTaskFailed={changeTask} deleteTask={deleteTask}/>
+      <TaskList tasks={items} changeCompletedTask={changeTask} changeTaskFailed={changeTask} deleteTask={deleteTask} resumeTask={changeTask}/>
     </div>
   )
 }
