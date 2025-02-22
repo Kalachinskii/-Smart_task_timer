@@ -7,7 +7,7 @@ import "../../style.css";
 import { Timer } from './Timer';
 import styles from '../../activeCardList.module.css';
 
-export function SliderCard({tasks, changeCompletedTask, changeTaskFailed, deleteTask}) {
+export function SliderCard({tasks, changeCompletedTask, changeTaskFailed, deleteTask, handleUpdate}) {
     return (
         <Swiper
             modules={[Pagination]}
@@ -40,7 +40,7 @@ export function SliderCard({tasks, changeCompletedTask, changeTaskFailed, delete
                                 {el.task}
                             </h3>
                         </div>
-                        <Timer timeSecond={el.time} idTask={el.id} changeTaskFailed={changeTaskFailed}/>
+                        <Timer timeSecond={el.time} idTask={el.id} changeTaskFailed={changeTaskFailed} handleUpdate={handleUpdate}/>
                         <p onClick={() => changeCompletedTask({id: el.id, state: "completed"})} className={styles["btn-execute"]}>Выполнить</p>
                     </div>
                 </SwiperSlide>
