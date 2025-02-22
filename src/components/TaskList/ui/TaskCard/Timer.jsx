@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CountdownCircleTimer} from 'react-countdown-circle-timer'
 import styles from '../../timer.module.css';
 
-export const Timer = ({timeSecond, idTask, changeTaskFailed}) => {
+export const Timer = ({timeSecond, idTask, changeTaskFailed, handleUpdate}) => {
     const [isPlayPayse, setIsPlayPayse] = useState(true);
 
     const children = ({ remainingTime }) => {
@@ -41,7 +41,8 @@ export const Timer = ({timeSecond, idTask, changeTaskFailed}) => {
             rotation='counterclockwise'
             // Обработчик событий при завершении анимации - перезапуск в данном случае
             onComplete={() => {changeTaskFailed({state: "failed", id: idTask}); alert("задача провалена")} }
-            // onUpdate -	Обработчик событий обновления оставшегося времени
+            // Обработчик событий обновления оставшегося времени
+            onUpdate={(remainingTime) => handleUpdate({newTime: remainingTime, id: idTask, state: "time"})}
             // отображать время внутри
             children={children}
         >
