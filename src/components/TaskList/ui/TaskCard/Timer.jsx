@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react';
 import { CountdownCircleTimer} from 'react-countdown-circle-timer'
 import styles from '../../timer.module.css';
 
-export const Timer = ({timeSecond, idTask, changeTaskFailed, handleUpdate}) => {
-    const [isPlayPayse, setIsPlayPayse] = useState(true);
+export const Timer = ({startTime, idTask, changeTaskFailed, handleUpdate, isPlayPayse, changeIsPlayPayse, currentTime}) => {
+    // const [isPlayPayse, setIsPlayPayse] = useState(true);
 
     const children = ({ remainingTime }) => {
         const hours = String(Math.floor(remainingTime / 3600)).padStart(2, '0');
@@ -11,7 +10,7 @@ export const Timer = ({timeSecond, idTask, changeTaskFailed, handleUpdate}) => {
         const seconds = String(remainingTime % 60).padStart(2, '0');
     
         return (
-            <div className={styles['time-btn']} onClick={() => setIsPlayPayse(!isPlayPayse)}>
+            <div className={styles['time-btn']} onClick={() => changeIsPlayPayse({ id: idTask, state: "isPlayPayse" })}>
                 <p>{`${hours}:${minutes}:${seconds}`}</p>
                 {!isPlayPayse && <i className="fa-solid fa-play"></i>}
                 {isPlayPayse && <i className="fa-solid fa-pause"></i>}
@@ -24,7 +23,7 @@ export const Timer = ({timeSecond, idTask, changeTaskFailed, handleUpdate}) => {
             // остановить/запустить анимацию
             isPlaying={isPlayPayse}
             // Продолжительность обратного отсчета в секундах
-            duration={timeSecond}
+            duration={startTime}
             // Один из допустимых цветов обвотки
             colors={["#008394", "#00ffff", "#AFB3B7", "#ff0000"]}
             // Указывает время, когда цвет должен смениться на следующий цвет.
@@ -45,6 +44,8 @@ export const Timer = ({timeSecond, idTask, changeTaskFailed, handleUpdate}) => {
             onUpdate={(remainingTime) => handleUpdate({newTime: remainingTime, id: idTask, state: "time"})}
             // отображать время внутри
             children={children}
+            // Установите начальное оставшееся время, если оно отличается от продолжительности
+            initialRemainingTime={currentTime}
         >
 
         </CountdownCircleTimer>
